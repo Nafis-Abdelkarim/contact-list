@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 
 const ContactCard = () => {
+    const [showAge, setShowAge] = useState(false)
 
     return(
         <div className="contact-wrapper">
@@ -10,7 +11,8 @@ const ContactCard = () => {
         <div className="user-info">
             <p>Name: Anything</p>
             <p>Email: Anything@any.kj</p>
-            <p>Age: 23</p>
+            <button onClick={()=>setShowAge(!showAge)}>Show Age</button>
+            {showAge? <p>Age: 23</p> : null}
         </div>
         </div>
     </div>
