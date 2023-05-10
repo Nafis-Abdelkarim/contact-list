@@ -27,7 +27,7 @@ function App() {
     <div>
       {contacts.map((contact, index)=>{
         return(
-          <ContactCard 
+          <ContactCard Key={index}
           avatarUrl={contact.avatarUrl}
           name={contact.name}
           email={contact.email}
