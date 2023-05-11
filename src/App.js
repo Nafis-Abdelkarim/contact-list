@@ -1,8 +1,9 @@
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import ContactCard from './components/ContactCard';
 
 function App() {
-
+//Array of data
   const contacts = [
     {
       avatarUrl: "https://via.placeholder.com/150",
@@ -23,16 +24,27 @@ function App() {
       age: 29 
     }]
 
+    const [results, setResults] = useState([]);
+
+    useEffect(()=>{
+      fetch('https://randomuser.me/api/?results=2')
+      .then(response => response.json())
+      .then(data => { 
+        setResults(data.results)
+    });
+    }, [])
+    
+
   return (
     <div>
-      {contacts.map((contact, index)=>{
+      {results.map((result, index)=>{
         return(
-          <ContactCard Key={index}
-          avatarUrl={contact.avatarUrl}
-          name={contact.name}
-          email={contact.email}
-          age={contact.age} 
-      />
+          <ContactCard 
+          Key={index} 
+          avatarUrl={result.picture.large} 
+          name={result.name.first} 
+          email={result.email} 
+          age={result.dob.age} />
         )
       })}
     </div>
