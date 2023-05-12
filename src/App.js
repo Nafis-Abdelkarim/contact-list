@@ -27,7 +27,7 @@ function App() {
     const [results, setResults] = useState([]);
 
     useEffect(()=>{
-      fetch('https://randomuser.me/api/?results=2')
+      fetch('https://randomuser.me/api/?results=5')
       .then(response => response.json())
       .then(data => { 
         setResults(data.results)

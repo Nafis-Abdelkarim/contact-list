@@ -17,8 +17,8 @@
   background-color: rgb(83, 83, 255);
   box-shadow: 10px 10px 25px -16px rgba(0, 0, 0, 0.75);
   border-radius: 10px;
-  max-width: 500px;
-  max-height: 125px;
+  width: 500px;
+  height: 125px;
   margin: 15px 0 10px 0;
 }
 
